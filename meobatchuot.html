@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>catandrat</title>
+</head>
+<body>
+<script>
+    function Mouse(name,weight,speed,status){
+        this.name = name;
+        this.weight = weight;
+        this.status = status;
+        this.getStatus = function () {
+            return this.status;
+        }
+        this.setStatus = function (newStatus) {
+            this.status = newStatus;
+
+        }
+        this.sound = function (StringMouse) {
+            if (this.status){
+                console.log(stringouse);
+
+            }
+
+        }
+
+    }
+    let long = new Mouse('long',69,5,true);
+    let dung = new Mouse('dung',96.10.false);
+    let dong = new Mouse('dong',70,15,true);
+    function Cat(name,weight,speed) {
+        this.name = name;
+        this.weight = weight;
+        this.speed = speed;
+        this.sound = function (stringCat) {
+            console.log(stringCat);
+        }
+        this.catch = function (mouse) {
+            if (this.speed > mouse.speed) {
+                console.log('Mèo' + this.name + 'đã bắt được con chuột' + mouse.name);
+
+            } else {
+                console.log('Mèo' + this.name + ' khồn bắt được con chuột' + mouse.name);
+            }
+        }
+        this.eat = function (mouse) {
+            if (mouse.getStatus()) {
+                this.weight += mouse.weight;
+                mouse.setStatus(false);
+            } else {
+                console.log('con chuổt này đã bị ăn');
+            }
+        }
+    }
+        let minh = new cat ('minh',60,70);
+
+
+
+
+
+
+</script>
+</body>
+</html>
