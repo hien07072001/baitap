@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>snaka_and_frog</title>
+</head>
+<body>
+<script>
+    function Snaka(name,weight,speed,status) {
+        this.name = name;
+        this.weight = weight;
+        this.speed = speed;
+        this.status = status;
+        this.getStatus = function () {
+            return this.status;
+
+        }
+        this.setStatus = function (newStatus) {
+            this.status = newStatus;
+
+        }
+        this.sound = function (stringSnaka) {
+            if (this.status) {
+                console.log(stringSnaka);
+            }
+
+        }
+
+    }
+    let thanh=new Snaka('thanh',40,8,true);
+    let quan = new Snaka('quan',82,11,false);
+    let hoang = new Snaka('hoang',56,9,true);
+    function flog(name,weight,speed) {
+        this.name = name;
+        this.weight = weight;
+        this.speed = speed;
+        this.sound = function (stringFlog) {
+            console.log(stringFlog);
+
+        }
+        this.catch = function (Snaka) {
+            if (this.speed>Snaka.speed) {
+                console.log('ran'+ this.name +'da bat duoc con ech' + Snaka.name);
+            }
+            else{
+                console.log('ran' +this.name + 'khong bat duoc con ech' + Snaka.name);
+            }
+
+        }
+        this.eat =function (Snaka) {
+            if(Snaka.getStatus())
+            {
+                this.weight += Snaka.weight;
+                Snaka.setStatus(false);
+            }
+            else
+            {
+                console.log ('con ech nay da bi an');
+            }
+
+        }
+
+
+    }
+    let cam = new Frog('cam',40.60);
+</script>
+</body>
+</html>
